@@ -40,6 +40,7 @@ app.use(express.static(__dirname + '/public'));
 
 const User        = require('./app/models/user');
 const Collective  = require('./app/models/collective');
+const Location    = require('./app/models/location');
 
 app.use(function (req, res, next) {
     res.locals.appTitle = process.env.APP_TITLE;
@@ -64,8 +65,13 @@ app.use(function (req, res, next) {
                     res.locals.collectives = null; 
                 } else {
                     res.locals.collectives = collectives;
+                    Location
+                    .find({},{},{sort: {name: 1}})
+                    .exec(function(error, locations){
+                        res.locals.locations = locations;
+                        return next();
+                    });                  
                 }
-                return next();
             });
         });
     } else {
@@ -80,7 +86,12 @@ app.use(function (req, res, next) {
             }
             res.locals.user = null;
             res.locals.isLoggedIn = false;
-            return next();
+            Locations
+            .find({},{},{sort: {name: 1}})
+            .exec(function(error, locations){
+                res.locals.locations = locations;
+                return next();
+            });
         });
     }
     //return next(); 

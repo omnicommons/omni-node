@@ -1,22 +1,11 @@
 <% include ../partials/header.ejs %>
 
-<% 
-let userIsMember = false;
-if(user){   
-    for(var i = 0; i < collective.members.length; i++){
-        if(String(collective.members[i]._id) === String(user._id)){
-            userIsMember = true;
-        }
-    } 
-} 
-%>
-
 <div class="viewport-container">
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2">
-                <div class="card mt-3">
+                <div class="card mt-3 mb-5">
                     <div class="card-block">
                         <h3 class="card-title text-center">
                         	Apply For Event
@@ -87,6 +76,19 @@ if(user){
                                 <div class="col-12 col-md-6">
                                     <label for="endTime">End Time</label>
                                     <input type="time" name="endTime" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6">
+                                    <label for="locationId">End Date</label>
+                                    <select name="locationId" class="form-control">
+                                        <% locations.forEach(function(location){ %>
+                                            <option value="<%= location._id %>"><%= location.name %></option>
+                                        <% }); %>    
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+
                                 </div>
                             </div>  
                         </div>
