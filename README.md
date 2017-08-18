@@ -1,4 +1,4 @@
-# Node Template
+# Omni Commons In Node
 ## Installation
 
 ### Requirements
@@ -10,7 +10,7 @@ Email configuration requires free registration at [SendGrid](http://sendgrid.com
 ### Clone Project
 In your terminal/console clone the project by entering the following command:
 ```
-git clone https://github.com/matthewstewart/node-template.git
+git clone https://github.com/omnicommons/omni-node.git
 ```
 
 
@@ -20,7 +20,7 @@ You will need to create the following configuration file in `/config/env.js`:
 // Environment Variables
 
 // Application
-process.env['APP_TITLE'] = "Node Template";
+process.env['APP_TITLE'] = "Omni Commons";
 process.env['APP_ADMIN'] = "admin";
 
 // Database
@@ -68,7 +68,7 @@ process.env['SENDGRID_API_KEY'] = <your sendgrid api key>;
 ### Run From Terminal/Console
 Change directory to the project, install and launch:
 ```
-cd node-template
+cd omni-node
 npm install
 node server
 ```
