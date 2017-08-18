@@ -1,4 +1,5 @@
 # Omni Commons In Node
+This projects demo can be viewed at [http://omnicommons.herokuapp.com/](http://omnicommons.herokuapp.com/).  
 ## Installation
 
 ### Requirements
