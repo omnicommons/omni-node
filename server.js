@@ -114,6 +114,7 @@ require('./app/routes/static.js')(app);
 require('./app/routes/users.js')(app);
 require('./app/routes/collectives.js')(app);
 require('./app/routes/events.js')(app);
+require('./app/routes/locations.js')(app);
 
 /* Launch */
 app.listen(port, function () {

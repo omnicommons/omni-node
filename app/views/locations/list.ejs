@@ -1,0 +1,48 @@
+<% include ../partials/header.ejs %>
+
+<div class="viewport-container">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <div class="card mt-3">
+                    <div class="card-block">
+                        <h3 class="card-title text-center mb-0">
+                        	Omni Collectives
+                        </h3>
+                    </div><!-- .card-block -->
+                </div><!-- .card -->        
+                <% if(collectives && collectives.length > 0){ %>
+                    <div class="list-group mt-1">
+                        <% collectives.forEach(function(collective){ %>
+                            <a href="/collectives/<%= collective.name %>" class="list-group-item list-group-item-action">
+                                <%= collective.name %>
+                            </a>
+                        <% }); %>
+                        <% if(user && user.isAdmin){ %>
+                            <% if(user.isAdmin){ %>
+                                <a href="/collectives/new" class="list-group-item list-group-item-action">
+                                    Add New Collective
+                                </a>
+                            <% } %>    
+                        <% } %>
+                    </div>
+                <% } else { %>
+                    <div class="card mt-1">
+                        <div class="card-block">
+                            <p class="card-text">
+                                There are currently no Collectives.<br>
+                                <a href="/collectives/new" class="btn btn-success mt-4">
+                                    <i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Collective
+                                </a>
+                            </p>
+                        </div>    
+                    </div>
+                <% } %>   
+            </div>    
+        </div>        
+    </div>
+
+</div>
+
+<% include ../partials/footer.ejs %>
