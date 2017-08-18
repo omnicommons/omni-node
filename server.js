@@ -86,7 +86,7 @@ app.use(function (req, res, next) {
             }
             res.locals.user = null;
             res.locals.isLoggedIn = false;
-            Locations
+            Location
             .find({},{},{sort: {name: 1}})
             .exec(function(error, locations){
                 res.locals.locations = locations;
