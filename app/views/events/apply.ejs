@@ -1,0 +1,100 @@
+<% include ../partials/header.ejs %>
+
+<% 
+let userIsMember = false;
+if(user){   
+    for(var i = 0; i < collective.members.length; i++){
+        if(String(collective.members[i]._id) === String(user._id)){
+            userIsMember = true;
+        }
+    } 
+} 
+%>
+
+<div class="viewport-container">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <div class="card mt-3">
+                    <div class="card-block">
+                        <h3 class="card-title text-center">
+                        	Apply For Event
+                        </h3>
+                        <p class="card-text mt-3 text-center">
+                            The Omni Commons is a horizontally-run community of volunteers working to create an equitable model for distributing resources and sharing space. Please keep this in mind when making requests! Also, please note that we cannot hold events that run past midnight for the time being.
+                        </p>
+                        <p class="card-text mt-3 text-center">
+                            Event <strong>requests are now due by the second Thursday of the month</strong> for the following month. To request event next month, submit your request before the second Thursday of this month.We will review all requests received by that date on that weekend and get back to you early the next week.
+                        </p>
+                        <p class="card-text mt-3 text-center">
+                            Please review our <a href="/fee-structure">rental policy and fee structure</a> and <a href="/ballroom-event-guide">guidelines for hosting events in the ballroom</a>.
+                        </p>
+                        <form method="post">
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" class="form-control">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="organization">Organization</label>
+                                    <input type="text" name="name" class="form-control">
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6">
+                                    <label for="email">Email</label>
+                                    <input type="text" name="email" class="form-control">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" name="phone" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="relationship">Relationship To Omni</label>
+                                <textarea name="relationship" class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6">
+                                    <label for="contactName">Omni Contact</label>
+                                    <input type="text" name="contactName" class="form-control">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="collectiveName">Sponsoring Group</label>
+                                    <select name="collectiveName" class="form-control">
+                                        <% collectives.forEach(function(collective){ %>
+                                            <option value="<%= collective.name %>"><%= collective.name %></option>
+                                        <% }); %>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6">
+                                    <label for="startDate">Start Date</label>
+                                    <input type="date" name="startDate" class="form-control">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="startTime">Start Time</label>
+                                    <input type="time" name="startTime" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6">
+                                    <label for="endDate">End Date</label>
+                                    <input type="date" name="endDate" class="form-control">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="endTime">End Time</label>
+                                    <input type="time" name="endTime" class="form-control">
+                                </div>
+                            </div>  
+                        </div>
+                    </div><!-- .card-block -->
+                </div><!-- .card -->   
+            </div><!-- .col -->     
+        </div><!-- .row -->                    
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>
