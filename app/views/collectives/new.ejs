@@ -1,0 +1,57 @@
+<% include ../partials/header.ejs %>
+
+<div class="viewport-container">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="card mt-3">
+                    <div class="card-block">
+                        <h3 class="card-title text-center">
+                        	Add New Collective
+                        </h3>
+                        <form id="new-collective-form" method="post">
+                            <input type="hidden" id="summernote-content" name="summernoteContent" value="">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="Collective Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <div id="summernote"></div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button id="form-submit-button" class="btn btn-success mt-3">
+                                    <i class="fa fa-save"></i>&nbsp;&nbsp;Save
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>    
+            </div>    
+        </div>        
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+
+        // Initialize Summernote
+
+        $('#summernote').summernote({
+            height: 300
+        });
+
+        // Submit Form 
+
+        $(document).on( "click", "#form-submit-button", function() {
+            let content = $('#summernote').summernote('code');
+            $('#summernote-content').val(content);
+            $('#new-collective-form').submit();          
+        });        
+
+    });
+</script>
+
+<% include ../partials/footer.ejs %>

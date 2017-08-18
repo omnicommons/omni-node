@@ -1,0 +1,100 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+    <button 
+        class="navbar-toggler navbar-toggler-right" 
+        type="button" 
+        data-toggle="collapse" 
+        data-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/"><%= appTitle %></a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a 
+                    class="nav-link dropdown-toggle" 
+                    href="#" 
+                    id="eventsDropdownMenuLink" 
+                    data-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false">
+                    Events
+                </a>
+                <div class="dropdown-menu" aria-labelledby="eventsDropdownMenuLink">
+                    <a class="dropdown-item" href="/profile">Calendar</a>
+                    <a class="dropdown-item" href="/rules-for-events">Rules For Events At The Omni</a>
+                    <a class="dropdown-item" href="/fee-structure">Event Fee Structure</a>
+                    <a class="dropdown-item" href="/ballroom-event-guide">Ballroom Event Guide</a>
+                    <a class="dropdown-item" href="/occupy">Book An Event</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a 
+                    class="nav-link dropdown-toggle" 
+                    href="#" 
+                    id="collectivesDropdownMenuLink" 
+                    data-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false">
+                    Collectives
+                </a>
+                <div class="dropdown-menu" aria-labelledby="collectivesDropdownMenuLink">
+                    <% if(collectives && collectives.length > 0){ %>
+                        <% collectives.forEach(function(collective){ %>
+                            <a class="dropdown-item" href="/collectives/<%= collective.name %>"><%= collective.name %></a>
+                        <% }); %>
+                    <% } %>    
+                    <% if(user && user.isAdmin){ %>
+                        <a class="dropdown-item" href="/collectives/new">New Collective</a>
+                    <% } %>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a 
+                    class="nav-link dropdown-toggle" 
+                    href="#" 
+                    id="accessDropdownMenuLink" 
+                    data-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false">
+                    Access
+                </a>
+                <div class="dropdown-menu" aria-labelledby="accessDropdownMenuLink">
+                    <a class="dropdown-item" href="/statement-of-solidarity">Statement Of Solidarity</a>
+                    <a class="dropdown-item" href="https://omnicommons.org/wiki/Accessibility">Accessibility</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    Donate
+                </a>
+            </li>
+            <% if (isLoggedIn) { %>                         
+                <li class="nav-item dropdown">
+                    <a 
+                        class="nav-link dropdown-toggle" 
+                        href="#" 
+                        id="profileDropdownMenuLink" 
+                        data-toggle="dropdown" 
+                        aria-haspopup="true" 
+                        aria-expanded="false">
+                        <%= user.local.username %>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="profileDropdownMenuLink">
+                        <a class="dropdown-item" href="/profile">Profile</a>
+                        <a class="dropdown-item" href="/profile/edit">Edit Profile</a>
+                        <% if(user.isAdmin){ %>
+                            <a class="dropdown-item" href="/users">User List</a>
+                        <% } %>    
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </li>
+            <% } else { %>
+                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+            <% } %>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body {
+  background: url(/images/omnicommons.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Lato', sans-serif;
+}
+
+.viewport-container {
+	position: relative;
+	display: block;
+	min-height: 100vh;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.dark.viewport-container {
+	background-color: rgba(0,0,0,0.3);
+	color: white;
+}
+
+.white.viewport-container {
+	background-color: white;
+}
+
+#profile-image {
+	position: relative;
+	display: block;
+	max-height: 200px;
+	width: auto;
+	max-width: 100%;
+	margin: 20px auto 0px auto;
+}
+
+
+
+.text-lg {
+	font-size: 1.2em;
+}
+
+ul.text-lg li a,
+p.text-lg a,
+.card-title a {
+	font-weight: bold;
+	color: #333;
+}
+
+ul.text-lg li a:hover,
+ul.text-lg li a:active,
+ul.text-lg li a:focus,
+p.text-lg a:hover,
+p.text-lg a:active,
+p.text-lg a:focus,
+.card-title a:hover,
+.card-title a:active,
+.card-title a:focus {
+	color: #df7366;
+	text-decoration: none;
+}
+
+.card {
+	-webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.4);
+	box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.4);	
+}
+
+.card-block a {
+	word-break: break-all;
+}
+
+
+/* Transitions */
+
+.anim-1 {
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+
+/* Home Page */
+
+#home-intro {
+	margin-top: 30px;
+	font-size: 1.4em;
+}
+
+#home-title {
+	font-size: 3em;
+}
+
+a#home-address {
+	font-size: 1.4em;
+	line-height: 1em;	
+	color: white;
+}
+
+a#home-address:hover,
+a#home-address:active,
+a#home-address:focus {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a#home-join-button {
+    position: relative;
+    display: inline-block;
+    background: #df7366;
+    color: #fff;
+    border-radius: 100%;
+    width: 4.5em;
+    height: 4.5em;
+    line-height: 4.5em;
+    text-align: center;
+    font-size: 1.25em;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+a#home-join-button:hover,
+a#home-join-button:active,
+a#home-join-button:focus {
+	text-decoration: none;
+    background: #fff;
+    color: #df7366;	
+}
+
+
+
+footer {
+	padding-top: 50px;
+	padding-bottom: 20px;
+	background-color: #333;
+	color: white;
+	text-align: center;
+	font-size: 1.4em;
+}
+
+footer p a {
+	color: white !important;
+	font-weight: bold;
+}
+
+footer p a:hover,
+footer p a:active,
+footer p a:focus {
+	text-decoration: none;
+	color: #df7366 !important;
+}
+
+#copyright {
+	font-size: 0.7em;
+}
+
+.option-buttons {
+	position: relative;
+	display: block;
+	width: 200px;
+	margin: 40px auto 10px auto;
+}
+
+.option-buttons a.btn,
+.option-buttons form button {
+	border-radius: 0;
+	width: 200px;
+}
+
+.option-buttons form button:hover,
+.option-buttons form button:active,
+.option-buttons form button:focus {
+	cursor: pointer;
+}
+
+
+
+.note-popover.popover.in.note-image-popover.bottom,
+.note-popover.popover.in.note-link-popover.bottom {
+	display: none;
+}
+
+
+
+
+
+
+
+
+/* Bootstrap 4 Media Queries */
+
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) { 
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+	.padded.container-fluid {
+		padding-left: 50px;
+		padding-right: 50px;
+		padding-bottom: 50px;
+	}
+	#home-intro {
+		margin-top: 70px;
+		font-size: 2vw;
+	}
+	#home-title {
+		font-size: 8vw;
+	}
+	a#home-address {
+		font-size: 3.5vw;
+		line-height: 1em;	
+		color: white;
+	}	
+	a#home-address:hover,
+	a#home-address:active,
+	a#home-address:focus {
+
+	}	
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+}

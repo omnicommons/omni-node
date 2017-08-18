@@ -1,0 +1,67 @@
+<% include ../partials/header.ejs %>
+
+<% 
+let userIsMember = false;
+if(user){   
+    for(var i = 0; i < collective.members.length; i++){
+        if(String(collective.members[i]._id) === String(user._id)){
+            userIsMember = true;
+        }
+    } 
+} 
+%>
+
+<div class="viewport-container">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2 text-center">
+                <div class="card mt-3">
+                    <div class="card-block">
+                        <h3 class="card-title">
+                        	<%= collective.name %>
+                        </h3>
+                        <p class="card-text mt-3">
+                            <%- collective.description %>
+                        </p>
+                        <div class="option-buttons">
+                            <% if(user){ %>
+                                <% if(!userIsMember){ %>
+                                    <!--
+                                    <form method="post" action="/collectives/<%= collective._id %>/join">
+                                        <button type="submit" class="btn btn-block btn-success">Join Collective</button>
+                                    </form>
+                                    -->
+                                <% } else { %>
+                                    <!--    
+                                    <form method="post" action="/collectives/<%= collective._id %>/leave">
+                                        <button type="submit" class="btn btn-block btn-default">Leave Collective</button>
+                                    </form>
+                                    -->
+                                <% } %>
+                            <% } else { %>
+                                <!--
+                                <a href="/login" class="btn btn-block btn-primary">Login To Join</a>
+                                -->
+                            <% } %>
+                            <% if(user && user.isAdmin){ %>  
+                                <a href="/collectives/<%= collective._id %>/edit" class="btn btn-block btn-primary">Edit Collective</a>
+                                <form method="post" action="/collectives/<%= collective._id %>/delete">
+                                    <button type="submit" class="btn btn-block btn-danger">Delete Collective</button>
+                                </form>
+                            <% } %>
+                        </div>
+                    </div><!-- .card-block -->
+                </div><!-- .card -->   
+            </div><!-- .col -->     
+        </div><!-- .row -->
+        <% if(user){ %>
+            <% if(userIsMember){ %>        
+            
+            <% } %> 
+        <% } %>                       
+    </div>
+
+</div>
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+
+<div class="dark viewport-container">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+
+                <h3 class="text-center mt-3">Edit Profile</h3>
+
+                <form action="/profile/edit" method="post">    		
+              			<div class="form-group">
+              				<label for="profile-email">Email</label>
+              				<input type="text" id="profileEmail" name="profileEmail" class="form-control" value="<%= user.local.email%>" placeholder="youremailaddress@example.com"/>
+              			</div>
+              			<div class="form-group">
+              				<label for="profile-email">Phone Number</label>
+              				<input type="text" id="profilePhoneNumber" name="profilePhoneNumber" class="form-control" value="<%= user.local.phoneNumber%>" placeholder="5109876543"/>
+              			</div>
+              			<div class="form-group text-center mt-5">
+              				<input type="submit" class="btn btn-primary" value="Update">
+              			</div>
+                </form>
+
+            </div>    
+        </div>        
+    </div>
+
+</div>
+
+<% include ../partials/footer.ejs %>
