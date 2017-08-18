@@ -32,7 +32,8 @@ module.exports = function(app) {
     app.post('/locations/new', adminRequired, function(req, res) {
         let newLocation = new Location({
             name: req.body.name,
-            description: req.body.summernoteContent
+            description: req.body.summernoteContent,
+            peopleMax: req.body.peopleMax
         });
         newLocation.save(function(error, location){
             if(error){ console.log(error); }
@@ -44,7 +45,7 @@ module.exports = function(app) {
     app.get('/locations/:locationId/edit', adminRequired, function(req, res) {
         Location
         .findOne({'_id': req.params.locationId})
-        .exec(function (err, collective) {
+        .exec(function (err, location) {
             res.render('locations/edit.ejs', {
                 title : "Edit Location",
                 location: location
@@ -58,6 +59,7 @@ module.exports = function(app) {
         .exec(function (err, location) {
             location.name = req.body.name;
             location.description = req.body.summernoteContent;
+            location.peopleMax = req.body.peopleMax;
             location.save(function(error){
                 if(error){ console.log(error); }
                 res.redirect('/locations/' + location.name);

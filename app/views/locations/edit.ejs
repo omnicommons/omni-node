@@ -8,18 +8,25 @@
                 <div class="card mt-3">
                     <div class="card-block">
                         <h3 class="card-title text-center">
-                        	Edit Collective
+                        	Edit Location
                         </h3>
-                        <form id="edit-collective-form" method="post">
+                        <form id="edit-location-form" method="post">
                             <input type="hidden" id="summernote-content" name="summernoteContent" value="">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="Collective Name" value="<%= collective.name %>">
+                                <input type="text" name="name" class="form-control" placeholder="Location Name" value="<%= location.name %>">
                             </div>
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <div id="summernote"><%- collective.description %></div>
+                                <div id="summernote"><%- location.description %></div>
                             </div>
+                            <div class="form-group">
+                                <label for="peopleMax">Attendance Capacity</label>
+                                <div class="input-group">
+                                    <input type="number" name="peopleMax" min="0" class="form-control" aria-describedby="people-addon" value="<%= location.peopleMax %>">
+                                    <span class="input-group-addon" id="people-addon">People</span>
+                                </div>
+                            </div>                            
                             <div class="form-group text-center">
                                 <button id="form-submit-button" class="btn btn-success mt-3">
                                     <i class="fa fa-save"></i>&nbsp;&nbsp;Save
@@ -48,7 +55,7 @@
         $(document).on( "click", "#form-submit-button", function() {
             let content = $('#summernote').summernote('code');
             $('#summernote-content').val(content);
-            $('#edit-collective-form').submit();          
+            $('#edit-location-form').submit();          
         });        
 
     });

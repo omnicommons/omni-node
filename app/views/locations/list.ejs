@@ -8,32 +8,30 @@
                 <div class="card mt-3">
                     <div class="card-block">
                         <h3 class="card-title text-center mb-0">
-                        	Omni Collectives
+                        	Omni Locations
                         </h3>
                     </div><!-- .card-block -->
                 </div><!-- .card -->        
-                <% if(collectives && collectives.length > 0){ %>
+                <% if(locations && locations.length > 0){ %>
                     <div class="list-group mt-1">
-                        <% collectives.forEach(function(collective){ %>
-                            <a href="/collectives/<%= collective.name %>" class="list-group-item list-group-item-action">
-                                <%= collective.name %>
+                        <% locations.forEach(function(location){ %>
+                            <a href="/locations/<%= location.name %>" class="list-group-item list-group-item-action">
+                                <%= location.name %>
                             </a>
                         <% }); %>
                         <% if(user && user.isAdmin){ %>
-                            <% if(user.isAdmin){ %>
-                                <a href="/collectives/new" class="list-group-item list-group-item-action">
-                                    Add New Collective
-                                </a>
-                            <% } %>    
+                            <a href="/locations/new" class="list-group-item list-group-item-action">
+                                Add New Location
+                            </a>  
                         <% } %>
                     </div>
                 <% } else { %>
                     <div class="card mt-1">
                         <div class="card-block">
-                            <p class="card-text">
-                                There are currently no Collectives.<br>
-                                <a href="/collectives/new" class="btn btn-success mt-4">
-                                    <i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Collective
+                            <p class="card-text text-center">
+                                There are currently no Locations.<br>
+                                <a href="/locations/new" class="btn btn-success mt-4">
+                                    <i class="fa fa-plus"></i>&nbsp;&nbsp;Add New Location
                                 </a>
                             </p>
                         </div>    

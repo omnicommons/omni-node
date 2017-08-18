@@ -47,7 +47,7 @@ if(user){
                             <% if(user && user.isAdmin){ %>  
                                 <a href="/collectives/<%= collective._id %>/edit" class="btn btn-block btn-primary">Edit Collective</a>
                                 <form method="post" action="/collectives/<%= collective._id %>/delete">
-                                    <button type="submit" class="btn btn-block btn-danger">Delete Collective</button>
+                                    <button type="submit" class="btn btn-block btn-danger" disabled>Delete Collective</button>
                                 </form>
                             <% } %>
                         </div>
