@@ -17,6 +17,17 @@ module.exports = function(app) {
         res.render('events/apply.ejs', {
             title : "Apply For Event"
         });
-    }); 
+    });
+
+    app.post('/events/apply', function(req, res) {
+
+    });     
+
+    /* Apply For Audio/Video Page */
+    app.get('/events/apply-for-audio-video', function(req, res) {
+        res.render('events/requestav.ejs', {
+            title : "Audio Video Application"
+        });
+    });
 
 };	

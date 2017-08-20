@@ -187,7 +187,9 @@ footer p a:focus {
 }
 
 
-
+.custom-control-description {
+	margin-left: 10px;
+}
 
 
 

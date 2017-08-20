@@ -1,0 +1,278 @@
+<% include ../partials/header.ejs %>
+
+<div class="viewport-container">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <div class="card mt-3 mb-5">
+                    <div class="card-block">
+                        <h3 class="card-title text-center">
+                        	Omni Audio/Video Request
+                        </h3>
+                        <p class="text-lg mt-3 text-center">
+                            Thank you for choosing the Omni for your event! We have a team of people who are trained on our various sound and projection setups, and we can accommodate any sort of event anywhere in the building. Just let us know what your needs are by filling out this form, and we'll get in touch with you.
+                        </p>
+                        <form method="post">
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label for="eventName">Event Name</label>
+                                    <input type="text" name="eventName" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6">
+                                    <label for="eventTime">Event Time</label>
+                                    <input type="time" name="eventTime" class="form-control">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="eventDate">Date Of Event</label>
+                                    <input type="date" name="eventDate" class="form-control">
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" name="firstName" class="form-control">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" name="lastName" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6">
+                                    <label for="email">Email</label>
+                                    <input type="text" name="email" class="form-control">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" name="phone" class="form-control">
+                                </div>
+                            </div>
+                            <hr>
+                            
+                            <h3 class="mt-5">Basic Requirements</h3>
+                            
+                            <p class="text-lg">We have multiple options for sound systems and video projectors, depending on the type of event, location of the event, and size of the audience. Please select the options that would best suit you (check all that apply):</p>
+                            
+                            <h4 class="mt-4 mb-3">Check All That Apply</h4>
+                            
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="soundOperation" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Sound Operation</span>
+                                </label>
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="videoProjection" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Video Projection</span>
+                                </label>
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="additionalLighting" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Additional Lighting</span>
+                                </label>
+                            </div>
+                            
+                            <h4 class="mt-4 mb-3">Sound Systems</h4>
+                            
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="meyerSound" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Meyer Sound System in the Ballroom (the Main House System)</span>
+                                </label>
+                            </div>
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="portableSound" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Smaller Portable Sound System</span>
+                                </label>
+                            </div>
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="ashlyAmps" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Ashly Amps in the Basement (Large Sound System)</span>
+                                </label>
+                            </div>
+
+                            <h4 class="mt-4 mb-3">Projectors</h4>
+                            
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="ballroomTowardStage" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Ballroom Toward Stage</span>
+                                </label>
+                            </div>
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="ballroomTowardNorthWall" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Ballroom Toward North Wall</span>
+                                </label>
+                            </div>
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="meyerSound" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Portable Projection Screen</span>
+                                </label>
+                            </div>
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="basementProjection" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Basement Projection</span>
+                                </label>
+                            </div>
+
+                            <h4 class="mt-4 mb-3">Lighting</h4>
+
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="basicLighting" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Basic Lighting</span>
+                                </label>
+                            </div>
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="ballroomEffectsLighting" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Ballroom Effects Lighting</span>
+                                </label>
+                            </div>
+                            
+                            <hr>
+
+                            <h3 class="mt-5">Type Of Event</h3>
+                            
+                            <p class="text-lg">Please select the option that best describes your event (this will help us determine what equipment you'll need):</p>
+
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="speaker" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Speaker/Panel</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="dj" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">D.J.</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="band" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Band/s</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="mp3" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Music From MP3 Player</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="screening" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Visual/Film Screening</span>
+                                </label>
+                            </div>
+
+                            <p class="text-lg">
+                                Please give us more specific details. For example, how many microphones/stands would you need, do you need stage monitors, will you require an early sound-check, do you have your own computer to project from (what video inputs does it have), what format will your film be in (DVD, file on a drive, streaming from internet), whatever else you can think of:
+                            </p>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="description">Details</label>
+                                        <textarea name="description" class="form-control" rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <p class="text-lg">
+                                Additional Services Available:
+                            </p>
+
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="popcorn" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Popcorn</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="greenScreen" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Green Screen</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="recording" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Recording Service by Liberated Lens *Paid Service</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">                             
+                                <label class="custom-control custom-checkbox text-lg">
+                                    <input type="checkbox" name="editing" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Editing Service by Liberated Lens *Paid Service</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label for="payingJob">Is this a paid gig for the A/V team?</label>
+                                    <select name="payingJob" class="form-control">
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <h3 class="mt-5"><strong>Thanks For The Information!</strong></h3>
+                            
+                            <p class="text-lg">
+                                Expect a response within the week.<br></br>
+                                ~ Omni A/V Team
+                            </p>
+
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6 offset-md-3">
+                                    <input type="submit" class="btn btn-block btn-success mt-4" value="Submit For Approval">
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- .card-block -->
+                </div><!-- .card -->   
+            </div><!-- .col -->     
+        </div><!-- .row -->                    
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>
